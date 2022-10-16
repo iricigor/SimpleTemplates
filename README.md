@@ -1,4 +1,4 @@
-# Simple Tempates
+# Simple Templates
 
 This project is aimed to create set of simple PowerShell cmdlets in C# that would assist developers in writing PowerShell modules.
 
