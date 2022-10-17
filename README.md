@@ -24,3 +24,27 @@ Project is done in scope of Hacktoberfest 2022
 - https://github.com/PowershellFrameworkCollective/psframework - active
 - https://github.com/PowerShellOrg/Plaster - legendary, but last PR in 2021
 - https://github.com/PoshCode/ModuleBuilder - last release in 2020
+
+## Initial project creation
+
+Run `dotnet` commands:
+
+```batch
+dotnet new -i Microsoft.PowerShell.Standard.Module.Template
+dotnet new psmodule
+dotnet build
+```
+
+Then, verify it in PowerShell:
+```powershell
+Import-Module '.\bin\Debug\netstandard2.0\Simple_Templates.dll'
+Get-Module 'Simple_Templates'
+Test-SampleCmdlet 12
+```
+
+It should generate output similar to this:
+```
+FavoriteNumber FavoritePet
+-------------- -----------
+            12 Dog
+```
