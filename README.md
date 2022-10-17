@@ -42,6 +42,7 @@ Run `dotnet` commands:
 ```batch
 dotnet new -i Microsoft.PowerShell.Standard.Module.Template
 dotnet new psmodule
+dotnet new gitignore
 dotnet build
 ```
 
