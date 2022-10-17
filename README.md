@@ -13,6 +13,16 @@ Ultimatelly, all of this will be followed by `New-STModule` and maybe more (pipe
 
 Project is done in scope of Hacktoberfest 2022
 
+## Tasks list
+
+- [Currently worked on tasks](https://github.com/iricigor/Simple-Templates/milestone/1)
+![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/iricigor/Simple-Templates/1?style=plastic)
+- [All tasks  ](https://github.com/iricigor/Simple-Templates/issues)
+![GitHub issues](https://img.shields.io/github/issues/iricigor/Simple-Templates?style=plastic)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/iricigor/Simple-Templates?style=plastic)
+- [Open a new issue](https://github.com/iricigor/Simple-Templates/issues/new/choose)
+
+
 ## Links
 
 - https://hacktoberfest.com/
