@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "github.vscode-pull-request-github",
+        "streetsidesoftware.code-spell-checker",
+        "shardulm94.trailing-spaces",
+        "sirmspencer.vscode-autohide",
+        "ms-dotnettools.csharp"
+    ]
+}

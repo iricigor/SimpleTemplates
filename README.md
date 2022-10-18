@@ -29,7 +29,7 @@ Project is done in scope of Hacktoberfest 2022
 - [Using C# to Create PowerShell Cmdlets: The Basics @red-gate.com](https://www.red-gate.com/simple-talk/development/dotnet-development/using-c-to-create-powershell-cmdlets-the-basics/)
 - [How to create a Standard Library binary module @learn.microsoft.com](https://learn.microsoft.com/en-us/powershell/scripting/dev-cross-plat/create-standard-library-binary-module?view=powershell-7.2)
 - [Using Visual Studio Code to debug compiled cmdlets](https://learn.microsoft.com/en-us/powershell/scripting/dev-cross-plat/vscode/using-vscode-for-debugging-compiled-cmdlets)
- 
+
 ## Similar projects
 - https://github.com/PowershellFrameworkCollective/psframework - active
 - https://github.com/PowerShellOrg/Plaster - legendary, but last PR in 2021

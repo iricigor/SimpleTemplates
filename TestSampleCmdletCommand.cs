@@ -30,7 +30,7 @@ namespace Simple_Templates
         // This method will be called for each input received from the pipeline to this cmdlet; if no input is received, this method is not called
         protected override void ProcessRecord()
         {
-            WriteObject(new FavoriteStuff { 
+            WriteObject(new FavoriteStuff {
                 FavoriteNumber = FavoriteNumber,
                 FavoritePet = FavoritePet
             });
