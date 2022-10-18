@@ -4,6 +4,10 @@
         "streetsidesoftware.code-spell-checker",
         "shardulm94.trailing-spaces",
         "sirmspencer.vscode-autohide",
-        "ms-dotnettools.csharp"
+        "ms-dotnettools.csharp",
+        "github.copilot",
+        "yzhang.markdown-all-in-one",
+        "ms-vscode.powershell",
+        "2gua.rainbow-brackets"
     ]
 }
