@@ -14,7 +14,7 @@
                 "-NoExit",
                 "-NoProfile",
                 "-Command",
-                "Import-Module ${workspaceFolder}/bin/Debug/netstandard2.0/Simple_Templates.dll; gcm -module Simple_Templates; Test-SampleCmdlet 12",
+                "${workspaceFolder}/TestModule.ps1",
             ],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,

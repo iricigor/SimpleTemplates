@@ -2,9 +2,9 @@
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
 
-namespace Simple_Templates
+namespace SimpleTemplates
 {
-    [Cmdlet(VerbsDiagnostic.Test,"SampleCmdlet")]
+    [Cmdlet(VerbsCommon.New, "STFunction" )]
     [OutputType(typeof(FavoriteStuff))]
     public class TestSampleCmdletCommand : PSCmdlet
     {
