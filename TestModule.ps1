@@ -10,9 +10,12 @@ Get-Command -Module SimpleTemplates
 $FunctionName = 'Get-Greeting'
 $FunctionFile = "$FunctionName.ps1"
 
-New-STFunction $FunctionName
+New-STFunction $FunctionName -Verbose
 if (Get-Item $FunctionFile) {
     Write-Host "Function file created: $FunctionFile"
+    Write-Host "`nFunction file content:"
+    Get-Content $FunctionFile
+    Write-Host "`nRemoving function file..."
     Remove-Item $FunctionFile
 } else {
     Write-Host "Function file not created: $FunctionFile"
