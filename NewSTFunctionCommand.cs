@@ -31,10 +31,23 @@ namespace SimpleTemplates
                 WriteWarning($"File {FileName} exists");
             }
             else {
-                WriteVerbose($"Creating file {FileName}");
+                WriteVerbose($"Creating file {FileName}...");
                 File.Create(FileName).Dispose();
                 WriteVerbose($"Created {FileName}");
             }
+
+            // check if template file exists
+            string TemplateFileName = "templates/Function.ps1t";
+            if (File.Exists(TemplateFileName)) {
+                WriteVerbose($"Template file {TemplateFileName} exists");
+                foreach (string line in File.ReadLines(TemplateFileName)) {
+                    File.AppendAllText(FileName, line.Replace("$1", FunctionName) + Environment.NewLine);
+                }
+            }
+            else {
+                WriteWarning($"Template file {TemplateFileName} does not exist");
+            }
+
         }
 
         // This method will be called once at the end of pipeline execution; if no input is received, this method is not called
