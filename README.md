@@ -5,9 +5,9 @@ This project is aimed to create set of simple PowerShell cmdlets in C# that woul
 ## Commands
 
 Planned list of commands is:
-- New-STFunctionSimple
-- New-STFunctionAdvanced
-- New-STTestCase
+- `New-STFunction` - creates simple PowerShell function
+- `New-STAdvancedFunction` - create PS function with begin, process and end blocks
+- `New-STTestCase` - creates a Pester test case
 
 Ultimatelly, all of this will be followed by `New-STModule` and maybe more (pipelines, documentation, etc.)
 
@@ -15,8 +15,7 @@ Project is done in scope of Hacktoberfest 2022
 
 ## Tasks list
 
-- [Currently worked on tasks](https://github.com/iricigor/Simple-Templates/milestone/1)
-![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/iricigor/Simple-Templates/1?style=plastic)
+- [Currently worked on tasks ![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/iricigor/Simple-Templates/2?style=plastic)](https://github.com/iricigor/Simple-Templates/milestone/1)
 - [All tasks  ](https://github.com/iricigor/Simple-Templates/issues)
 ![GitHub issues](https://img.shields.io/github/issues/iricigor/Simple-Templates?style=plastic)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/iricigor/Simple-Templates?style=plastic)
