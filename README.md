@@ -15,7 +15,7 @@ Project is done in scope of Hacktoberfest 2022
 
 ## Tasks list
 
-- [Currently worked on tasks ![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/iricigor/Simple-Templates/2?style=plastic)](https://github.com/iricigor/Simple-Templates/milestone/1)
+- [Currently worked on tasks ![GitHub milestone](https://img.shields.io/github/milestones/progress-percent/iricigor/Simple-Templates/2?style=plastic)](https://github.com/iricigor/Simple-Templates/milestone/2)
 - [All tasks  ](https://github.com/iricigor/Simple-Templates/issues)
 ![GitHub issues](https://img.shields.io/github/issues/iricigor/Simple-Templates?style=plastic)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/iricigor/Simple-Templates?style=plastic)
