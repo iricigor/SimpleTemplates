@@ -10,8 +10,9 @@ Write-Host "Current time: $(Get-Date)"
 #Push-Location $testsLocation
 
 ./test/TestModule.ps1
-./test/TestFunction.ps1 'Get-Greeting1'
-./test/TestAdvancedFunction.ps1 'Get-Greeting2'
-./test/CleanUp.ps1 'Get-Greeting1','Get-Greeting2'
+./test/TestFunction.ps1 'Get-Basic'
+./test/TestAdvancedFunction.ps1 'Get-Adv'
+./test/CleanUp.ps1 'Get-Basic','Get-Basic-a1','Get-Basic-a2'
+./test/CleanUp.ps1 'Get-Adv','Get-Adv-a1','Get-Adv-a2'
 
 #Pop-Location
