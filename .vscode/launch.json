@@ -14,7 +14,7 @@
                 "-NoExit",
                 "-NoProfile",
                 "-Command",
-                "${workspaceFolder}/TestModule.ps1",
+                "${workspaceFolder}/test/AllTests.ps1",
             ],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
