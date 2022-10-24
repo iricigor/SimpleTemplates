@@ -37,7 +37,7 @@ namespace SimpleTemplates
             }
 
             // check if template file exists
-            string TemplateFileName = "templates/Function.ps1t";
+            string TemplateFileName = "templates/AdvancedFunction.ps1t";
             if (File.Exists(TemplateFileName)) {
                 WriteVerbose($"Template file {TemplateFileName} exists");
                 foreach (string line in File.ReadLines(TemplateFileName)) {

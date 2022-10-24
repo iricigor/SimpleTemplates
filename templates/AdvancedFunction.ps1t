@@ -1,3 +1,18 @@
 function $1 {
-    # add function code here
+
+    [CmdletBinding()]
+    param ()
+
+
+    BEGIN {
+        Write-Verbose "Begin block"
+    }
+
+    PROCESS {
+        Write-Verbose "Process block"
+    }
+
+    END {
+        Write-Verbose "End block"
+    }
 }
