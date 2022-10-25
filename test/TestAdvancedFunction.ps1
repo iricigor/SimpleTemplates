@@ -20,3 +20,6 @@ Write-Host "`nExecuting function file..."
 Write-Host "It should have generate a function $FunctionName"
 Get-Command $FunctionName
 Get-Help $FunctionName
+
+# testing arrays of functions
+"$FunctionName-a1","$FunctionName-a2" | New-STAdvancedFunction -Verbose
