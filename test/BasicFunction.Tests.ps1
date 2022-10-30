@@ -1,31 +1,20 @@
-BeforeAll {
-    Import-Module ./bin/Debug/netstandard2.0/SimpleTemplates.dll -Force
-
-    $FunctionsArrayNames = 'Get-BF1','Get-BF2'
-    $FunctionsArrayFiles = $FunctionsArrayNames | ForEach-Object { "$_.ps1" }
-
-}
-
 Describe 'File creation' {
 
     BeforeAll {
+        Import-Module ./bin/Debug/netstandard2.0/SimpleTemplates.dll -Force
+        Push-Location 'TestDrive:\'
         $FunctionName = 'Get-BF'
         $FunctionFile = "$FunctionName.ps1"
-        Set-Location 'TestDrive:\'
-        New-STFunction -FunctionName $FunctionName
-        . ./$FunctionFile
+        New-STFunction -FunctionName $FunctionName -verbose
     }
 
     It 'There should be a new file created' {
-        $FunctionFile | Should -Exist
+        Join-Path 'TestDrive:\' $FunctionFile | Should -Exist
     }
 
     It 'There should be no file without extension' {
         $FunctionName | Should -Not -Exist
     }
-}
-
-Describe 'File content' {
 
     It 'Should declare a function' {
         . ./$FunctionFile
@@ -37,14 +26,38 @@ Describe 'File content' {
         Get-Help $FunctionName | Should -Not -BeNullOrEmpty
     }
 
-}
+    It 'Should create file in current directory' {
+        New-Item 'TestDrive:\' -Name 'Test' -ItemType Directory
+        Set-Location 'TestDrive:\Test'
+        New-STFunction -FunctionName $FunctionName
+        Join-Path 'TestDrive:\Test' $FunctionFile | Should -Exist
+    }
 
-Describe 'Pipeline input' {
-    It 'Should accept an array' {
-        $FunctionsArrayNames | New-STFunction
+    AfterAll {
+        Remove-Item $FunctionFile -Force -ErrorAction SilentlyContinue
+        Pop-Location
     }
 }
 
-AfterAll {
-    Remove-Item $FunctionFile -Force -ErrorAction SilentlyContinue
+Describe 'Pipeline input' {
+
+    BeforeAll {
+        Import-Module ./bin/Debug/netstandard2.0/SimpleTemplates.dll -Force
+        Push-Location 'TestDrive:\'
+        $FunctionsArrayNames = 1..3 | ForEach-Object {"Get-BF$_"}
+        $FunctionsArrayFiles = $FunctionsArrayNames | ForEach-Object { "$_.ps1" }
+    }
+
+    It 'Should accept an array' {
+        $FunctionsArrayNames | New-STFunction -wa 0
+    }
+
+    It 'Should create a file for each item in the array' {
+        $FunctionsArrayFiles | Should -Exist
+    }
+
+    AfterAll {
+        Remove-Item $FunctionsArrayFiles -Force -ErrorAction SilentlyContinue
+        Pop-Location
+    }
 }
