@@ -5,7 +5,7 @@ Describe 'File creation' {
         Push-Location 'TestDrive:\'
         $FunctionName = 'Get-BF'
         $FunctionFile = "$FunctionName.ps1"
-        New-STFunction -FunctionName $FunctionName -verbose
+        New-STFunction -FunctionName $FunctionName
     }
 
     It 'There should be a new file created' {
@@ -49,7 +49,7 @@ Describe 'Pipeline input' {
     }
 
     It 'Should accept an array' {
-        $FunctionsArrayNames | New-STFunction -wa 0
+        $FunctionsArrayNames | New-STFunction
     }
 
     It 'Should create a file for each item in the array' {
