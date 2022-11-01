@@ -5,11 +5,11 @@ This project is aimed to create set of simple PowerShell cmdlets in C# that woul
 ## Commands
 
 Planned list of commands is:
-- `New-STFunction` - creates simple PowerShell function
+- `New-STBasicFunction` - creates simple PowerShell function
 - `New-STAdvancedFunction` - create PS function with begin, process and end blocks
 - `New-STTestCase` - creates a Pester test case
 
-Ultimatelly, all of this will be followed by `New-STModule` and maybe more (pipelines, documentation, etc.)
+Ultimately, all of this will be followed by `New-STModule` and maybe more (pipelines, documentation, etc.)
 
 Project is done in scope of Hacktoberfest 2022
 
