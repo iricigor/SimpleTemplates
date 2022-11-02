@@ -8,6 +8,7 @@
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0-preview-06">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <Content Include="templates\Function.ps1t" />
+    <Content Include="templates\AdvancedFunction.ps1t" />
+    <Content Include="templates\BasicFunction.ps1t" />
   </ItemGroup>
 </Project>

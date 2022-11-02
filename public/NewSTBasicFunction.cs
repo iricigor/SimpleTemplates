@@ -5,7 +5,7 @@ using System.Management.Automation.Runspaces;
 
 namespace SimpleTemplates
 {
-    [Cmdlet(VerbsCommon.New, "STFunction" )]
+    [Cmdlet(VerbsCommon.New, "STBasicFunction" )]
     [OutputType(typeof(string))]
     public class NewSTBasicFunction : PSCmdlet
     {
@@ -15,7 +15,13 @@ namespace SimpleTemplates
             ValueFromPipeline = true,
             ValueFromPipelineByPropertyName = true)]
         public string[] FunctionName { get; set; }
-        private const string TemplateFileName = "templates/Function.ps1t";
+        [Parameter(
+            Mandatory = false,
+            Position = 1,
+            ValueFromPipeline = true,
+            ValueFromPipelineByPropertyName = true)]
+        public string[] MainParameter { get; set; }
+        private const string TemplateFileName = "templates/BasicFunction.ps1t";
 
         protected override void BeginProcessing()
         {

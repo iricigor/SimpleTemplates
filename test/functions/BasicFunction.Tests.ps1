@@ -5,7 +5,7 @@ Describe 'File creation' {
         Push-Location 'TestDrive:\'
         $FunctionName = 'Get-BF'
         $FunctionFile = "$FunctionName.ps1"
-        New-STFunction -FunctionName $FunctionName
+        New-STBasicFunction -FunctionName $FunctionName
     }
 
     It 'There should be a new file created' {
@@ -29,7 +29,7 @@ Describe 'File creation' {
     It 'Should create file in current directory' {
         New-Item 'TestDrive:\' -Name 'Test' -ItemType Directory
         Set-Location 'TestDrive:\Test'
-        New-STFunction -FunctionName $FunctionName
+        New-STBasicFunction -FunctionName $FunctionName
         Join-Path 'TestDrive:\Test' $FunctionFile | Should -Exist
     }
 
@@ -49,7 +49,7 @@ Describe 'Pipeline input' {
     }
 
     It 'Should accept an array' {
-        $FunctionsArrayNames | New-STFunction
+        $FunctionsArrayNames | New-STBasicFunction
     }
 
     It 'Should create a file for each item in the array' {
@@ -59,5 +59,30 @@ Describe 'Pipeline input' {
     AfterAll {
         Remove-Item $FunctionsArrayFiles -Force -ErrorAction SilentlyContinue
         Pop-Location
+    }
+
+    Describe 'Main Parameter Validation' {
+
+        BeforeAll {
+            Import-Module ./bin/Debug/netstandard2.0/SimpleTemplates.dll -Force
+            Push-Location 'TestDrive:\'
+        }
+
+        It 'Should accept main parameter argument' {
+            {New-STBasicFunction -FunctionName 'Get-BF' -MainParameter 'P1'} | Should -Not -Throw
+        }
+
+        It 'Function contains proper parameter' {
+            . .\Get-BF.ps1
+            (Get-Command Get-BF).Parameters.Keys | Should -Contain 'P1'
+        }
+
+        It 'Function does not contain wrong parameter' {
+            (Get-Command Get-BF).Parameters.Keys | Should -Not -Contain 'P2'
+        }
+
+        AfterAll {
+            Pop-Location
+        }
     }
 }

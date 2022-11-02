@@ -29,7 +29,7 @@ Describe 'File creation' {
     It 'Should create file in current directory' {
         New-Item 'TestDrive:\' -Name 'Test' -ItemType Directory
         Set-Location 'TestDrive:\Test'
-        New-STFunction -FunctionName $FunctionName
+        New-STAdvancedFunction -FunctionName $FunctionName
         Join-Path 'TestDrive:\Test' $FunctionFile | Should -Exist
     }
 
